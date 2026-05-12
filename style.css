@@ -226,7 +226,7 @@ body {
     transform: scale(1.02); /* Leve zoom ao passar o mouse */
 }
 .google-card {
-    background: white;
+    background: rgb(233, 195, 195);
     color: #333;
     max-width: 350px; /* Aumentado de 600px para 750px para dar respiro à imagem */
     margin: 0 auto;
@@ -265,7 +265,7 @@ body {
 
 .btn-google {
     background-color: var(--azul-google);
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 8px;
