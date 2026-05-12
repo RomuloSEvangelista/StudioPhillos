@@ -1,11 +1,11 @@
 /**
- * Studio Phiillos - Scripts de Interatividade
+ * Studio Phillos - Scripts de Interatividade
  * Desenvolvido por: Romulo Evangelista
  */
 
 document.addEventListener("DOMContentLoaded", function() {
     // --- 1. Inicialização e Feedback ---
-    console.log("Site do Studio Phiillos carregado com sucesso!");
+    console.log("Site do Studio Phillos carregado com sucesso!");
 
     // --- 2. Controle do Menu Hamburger (Mobile) ---
     const menu = document.querySelector('#mobile-menu');
