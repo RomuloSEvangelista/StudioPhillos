@@ -1,24 +1,48 @@
 /**
  * Studio Phiillos - Scripts de Interatividade
+ * Desenvolvido por: Romulo Evangelista
  */
 
 document.addEventListener("DOMContentLoaded", function() {
+    // --- 1. Inicialização e Feedback ---
     console.log("Site do Studio Phiillos carregado com sucesso!");
 
-    // 1. Reforço para o Embed do Instagram
-    // Às vezes, em conexões lentas, o script do Instagram carrega antes dos elementos estarem prontos.
-    // Isso garante que o Instagram procure por blocos de vídeo assim que a página estiver pronta.
+    // --- 2. Controle do Menu Hamburger (Mobile) ---
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.nav-links');
+
+    if (menu && menuLinks) {
+        // Abre/Fecha menu ao clicar no ícone
+        menu.addEventListener('click', () => {
+            menu.classList.toggle('is-active');
+            menuLinks.classList.toggle('active');
+        });
+
+        // Fecha o menu automaticamente ao clicar em um link (âncora)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('is-active');
+                menuLinks.classList.remove('active');
+            });
+        });
+    }
+
+    // --- 3. Reforço para Embeds do Instagram ---
+    // Garante que os vídeos sejam renderizados se o script do Instagram carregar antes da página
     if (window.instgrm) {
         window.instgrm.Embeds.process();
     }
 
-    // 2. Log de Performance (Opcional - ajuda a monitorar carregamento)
-    const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-    console.log(`Tempo de carregamento interativo: ${loadTime}ms`);
+    // --- 4. Log de Performance (Opcional) ---
+    if (window.performance) {
+        const timing = window.performance.getEntriesByType("navigation")[0];
+        const loadTime = Math.round(timing.domContentLoadedEventEnd);
+        console.log(`Tempo de carregamento: ${loadTime}ms`);
+    }
 });
 
-// 3. Prevenção de erros de 'unload' (silenciando avisos de terceiros se possível)
-// Este trecho avisa ao navegador que não estamos usando funções obsoletas.
-window.addEventListener('pagehide', (event) => {
-    // Substitui o antigo 'unload' por 'pagehide' para melhor performance (BFCache)
+// --- 5. Otimização de Performance (BFCache) ---
+// Substitui o evento 'unload' obsoleto para evitar avisos no console e melhorar a navegação
+window.addEventListener('pagehide', () => {
+    // Evento disparado quando o usuário sai da página
 });

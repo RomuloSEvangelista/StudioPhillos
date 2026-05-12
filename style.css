@@ -1,3 +1,4 @@
+/* 1. CONFIGURAÇÕES GERAIS E VARIÁVEIS */
 :root { 
     --vinho: #A52A2A; 
     --marrom: #8B4513; 
@@ -5,23 +6,96 @@
     --preto-transparente: rgba(0, 0, 0, 0.4);
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Deslize suave ao clicar no menu */
+    scroll-padding-top: 80px; /* Evita que a navbar cubra o título ao navegar */
+}
+
 body { 
     font-family: 'Montserrat', sans-serif; 
-    margin: 0; 
     background-color: var(--vinho); 
     color: var(--branco); 
     text-align: center;
     line-height: 1.6;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal no mobile */
 }
 
-/* IMPORTANTE: Sem a barra / no início para o GitHub Pages */
+/* 2. NAVBAR E MENU */
+.navbar {
+    background-color: var(--vinho);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 20px;
+}
+
+.logo {
+    color: var(--branco);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--branco);
+    text-decoration: none;
+    padding: 0 1.5rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { 
+    color: var(--marrom); 
+}
+
+.menu-toggle {
+    display: none; /* Escondido no Desktop */
+}
+
+/* 3. SEÇÃO HERO (CAPA) */
 .hero { 
-    background: url('img/capa.png') center/cover no-repeat; 
-    height: 550px; 
+    background: url('img/capa.png') no-repeat center center; 
+    background-size: cover; /* Isso garante que a imagem preencha o espaço sem esticar */
+    height: 80vh; /* Usa 80% da altura da tela do usuário, fica perfeito no Desktop */
+    min-height: 400px; /* Garante que não fique pequena demais em telas ultra-wide */
     width: 100%; 
     box-shadow: inset 0 0 150px rgba(0,0,0,0.6);
+    display: block;
 }
 
+/* Ajuste para Mobile (telas menores) */
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 50vh; /* No celular, uma altura menor fica mais proporcional */
+        background-attachment: scroll; /* Melhora a performance em celulares */
+    }
+}
+
+/* 4. BOTÃO WHATSAPP (CTA) */
 .cta-container {
     background-color: var(--preto-transparente);
     padding: 40px 20px;
@@ -47,7 +121,12 @@ body {
     transform: scale(1.05); 
 }
 
-.container { max-width: 1100px; margin: auto; padding: 50px 20px; }
+/* 5. CONTEÚDO PRINCIPAL E CARDS */
+.container { 
+    max-width: 1100px; 
+    margin: auto; 
+    padding: 80px 20px; 
+}
 
 .card-instrutor { 
     background: rgba(255, 255, 255, 0.1); 
@@ -74,21 +153,23 @@ body {
 .instrutor-texto h2 { 
     font-family: 'Playfair Display', serif; 
     font-size: 2.5rem; 
-    margin: 0 0 15px 0; 
+    margin-bottom: 15px; 
 }
 
 .insta-btn {
     font-size: 3.5rem;
     color: var(--branco);
-    text-decoration: none;
     transition: 0.3s;
     margin-top: 10px;
     display: inline-block;
 }
 
-.insta-btn:hover { color: #f09433; transform: rotate(10deg); }
+.insta-btn:hover { 
+    color: #f09433; 
+    transform: rotate(10deg); 
+}
 
-/* ESTILO BONITO PARA DEPOIMENTOS */
+/* 6. DEPOIMENTOS */
 .titulo-secao { 
     font-family: 'Playfair Display', serif; 
     font-size: 3rem; 
@@ -114,14 +195,66 @@ body {
     justify-items: center;
 }
 
+/* 7. RODAPÉ */
 footer { 
     padding: 60px 20px; 
     background: rgba(0,0,0,0.5); 
     border-top: 1px solid rgba(255,255,255,0.2); 
 }
 
-@media (max-width: 768px) {
-    .card-instrutor { text-align: center; justify-content: center; }
+footer a:hover .fa-github {
+    color: var(--marrom);
+    transform: scale(1.2);
+}
+
+/* 8. RESPONSIVIDADE (MOBILE) */
+@media screen and (max-width: 768px) {
+    /* Navbar Mobile */
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Escondido na direita */
+        top: 0;
+        height: 100vh;
+        width: 70%;
+        background: var(--vinho);
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0; /* Entra na tela */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background: var(--branco);
+        margin: 5px;
+        transition: 0.3s;
+        display: block;
+    }
+
+    /* Animação X do hamburger */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Ajustes de conteúdo mobile */
     .hero { height: 400px; }
+    .card-instrutor { text-align: center; justify-content: center; }
+    .instrutor-texto h2 { font-size: 2rem; }
     .titulo-secao { font-size: 2.2rem; }
 }

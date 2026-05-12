@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Phiillos | Pilates Contemporâneo</title>
     
-    <!-- Fontes Elegantes: Montserrat e Playfair Display -->
+    <!-- Fontes Elegantes -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     
     <!-- Link para o CSS Externo -->
@@ -16,10 +16,31 @@
 </head>
 <body>
 
-    <!-- Capa Principal (Configurada no CSS como img/capa.png) -->
-    <header class="hero"></header>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Studio Phiillos</div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-    <!-- Botão de Agendamento com Mensagem Personalizada -->
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CAPA PRINCIPAL -->
+    <!-- O ID início deve estar aqui para a navegação voltar ao topo -->
+    <header class="hero" id="inicio"></header>
+
+    <!-- CHAMADA PARA AÇÃO -->
     <section class="cta-container">
         <a href="https://wa.me/5521998967716?text=Olá%2C%20Roberto!%20Vi%20o%20site%20do%20Studio%20Phiillos%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental%20de%20Pilates." 
            target="_blank" 
@@ -30,42 +51,37 @@
 
     <main class="container">
         
-        <!-- Perfil Profissional -->
-        <section class="card-instrutor">
+        <!-- SEÇÃO SOBRE -->
+        <section class="card-instrutor" id="sobre">
             <img src="img/roberto.png" class="instrutor-foto" alt="Roberto Cacilias">
             <div class="instrutor-texto">
                 <h2>Roberto Cacilias</h2>
                 <p>Fisioterapeuta e Professor de Educação Física. No Studio Phiillos, unimos ciência, cuidado e movimento para transformar sua qualidade de vida.</p>
                 
-                <!-- Ícone do Instagram -->
                 <a href="https://www.instagram.com/studiophillos_pilates/" target="_blank" class="insta-btn" title="Siga-nos no Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
         </section>
 
-        <!-- Seção de Depoimentos com Fonte Playfair -->
-        <h2 class="titulo-secao">Depoimentos</h2>
+        <!-- SEÇÃO DE DEPOIMENTOS -->
+        <h2 class="titulo-secao" id="depoimentos">Depoimentos</h2>
         
         <div class="videos-grid">
-            <!-- Vídeo 1 -->
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTdwDeAj8eZ/" data-instgrm-version="14"></blockquote>
-            <!-- Vídeo 2 -->
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DWZC4IBjuqh/" data-instgrm-version="14"></blockquote>
-            <!-- Vídeo 3 (Link Limpo para evitar erros) -->
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DVgRFwhjUY8/" data-instgrm-version="14"></blockquote>
         </div>
 
     </main>
 
-    <!-- Rodapé -->
-    <footer>
+    <!-- RODAPÉ -->
+    <footer id="contato">
         <p style="font-size: 1.8rem; margin-bottom: 5px;"><strong>Studio Phiillos</strong></p>
         <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 15px;">CNPJ: 62.072.254/0001-7</p>
         
         <p><i class="fas fa-map-marker-alt"></i> Av. Delfim Moreira, 181 – Sala 302, Várzea, Teresópolis - RJ</p>
         
-        <!-- WhatsApp no Rodapé também com mensagem -->
         <p>
             <i class="fab fa-whatsapp"></i> WhatsApp: 
             <a href="https://wa.me/5521998967716?text=Olá%2C%20Roberto!%20Gostaria%20de%20mais%20informações%20sobre%20as%20aulas%20no%20Studio%20Phiillos." 
@@ -74,9 +90,16 @@
                 <strong>(21) 99896-7716</strong>
             </a>
         </p>
+
+        <hr style="opacity: 0.2; margin: 30px 0 20px 0;">
+        <p style="font-size: 0.85rem; opacity: 0.7;">
+            Desenvolvido por <strong>Romulo Evangelista</strong> 
+            <a href="https://github.com/RomuloSEvangelista" target="_blank" style="color: white; margin-left: 8px; font-size: 1.2rem; vertical-align: middle;">
+                <i class="fab fa-github"></i>
+            </a>
+        </p>
     </footer>
 
-    <!-- Scripts Externos -->
     <script async src="//www.instagram.com/embed.js"></script>
     <script src="script.js"></script>
 </body>
