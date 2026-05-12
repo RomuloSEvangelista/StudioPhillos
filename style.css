@@ -228,7 +228,7 @@ body {
 .google-card {
     background: white;
     color: #333;
-    max-width: 750px; /* Aumentado de 600px para 750px para dar respiro à imagem */
+    max-width: 350px; /* Aumentado de 600px para 750px para dar respiro à imagem */
     margin: 0 auto;
     padding: 40px;    /* Mais preenchimento para um visual premium */
     border-radius: 25px;
