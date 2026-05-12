@@ -4,6 +4,8 @@
     --marrom: #8B4513; 
     --branco: #ffffff; 
     --preto-transparente: rgba(0, 0, 0, 0.4);
+    --azul-google: #4285F4;
+    --amarelo-google: #fbbc04;
 }
 
 * {
@@ -13,7 +15,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Deslize suave ao clicar no menu */
+    scroll-behavior: smooth;
     scroll-padding-top: 80px; /* Evita que a navbar cubra o título ao navegar */
 }
 
@@ -23,7 +25,7 @@ body {
     color: var(--branco); 
     text-align: center;
     line-height: 1.6;
-    overflow-x: hidden; /* Evita barra de rolagem horizontal no mobile */
+    overflow-x: hidden;
 }
 
 /* 2. NAVBAR E MENU */
@@ -73,26 +75,18 @@ body {
 }
 
 .menu-toggle {
-    display: none; /* Escondido no Desktop */
+    display: none;
 }
 
 /* 3. SEÇÃO HERO (CAPA) */
 .hero { 
     background: url('img/capa.png') no-repeat center center; 
-    background-size: cover; /* Isso garante que a imagem preencha o espaço sem esticar */
-    height: 80vh; /* Usa 80% da altura da tela do usuário, fica perfeito no Desktop */
-    min-height: 400px; /* Garante que não fique pequena demais em telas ultra-wide */
+    background-size: cover;
+    height: 80vh;
+    min-height: 400px;
     width: 100%; 
     box-shadow: inset 0 0 150px rgba(0,0,0,0.6);
     display: block;
-}
-
-/* Ajuste para Mobile (telas menores) */
-@media screen and (max-width: 768px) {
-    .hero {
-        height: 50vh; /* No celular, uma altura menor fica mais proporcional */
-        background-attachment: scroll; /* Melhora a performance em celulares */
-    }
 }
 
 /* 4. BOTÃO WHATSAPP (CTA) */
@@ -169,7 +163,7 @@ body {
     transform: rotate(10deg); 
 }
 
-/* 6. DEPOIMENTOS */
+/* 6. DEPOIMENTOS E GRID DE VÍDEOS */
 .titulo-secao { 
     font-family: 'Playfair Display', serif; 
     font-size: 3rem; 
@@ -195,7 +189,108 @@ body {
     justify-items: center;
 }
 
-/* 7. RODAPÉ */
+/* 7. ESTILO AVALIAÇÕES GOOGLE */
+.google-reviews {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 80px 20px;
+    margin-top: 50px;
+}
+
+.google-card {
+    background: white;
+    color: #333;
+    max-width: 600px; /* Largura otimizada para o selo */
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.google-card:hover {
+    transform: translateY(-5px);
+}
+
+.google-badge-img {
+    width: 100%;
+    max-width: 650px;  /* Aumentei significativamente o tamanho da imagem */
+    height: auto;
+    margin: 0 auto 30px auto;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+.google-badge-img:hover {
+    transform: scale(1.02); /* Leve zoom ao passar o mouse */
+}
+.google-card {
+    background: white;
+    color: #333;
+    max-width: 750px; /* Aumentado de 600px para 750px para dar respiro à imagem */
+    margin: 0 auto;
+    padding: 40px;    /* Mais preenchimento para um visual premium */
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.google-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: var(--amarelo-google);
+    font-size: 1.4rem;
+}
+
+.nota {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.google-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.btn-google {
+    background-color: var(--azul-google);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-google:hover {
+    background-color: #357abd;
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+}
+@media screen and (max-width: 768px) {
+    /* ... outros estilos mobile ... */
+
+    .google-badge-img {
+        max-width: 95%; /* Quase largura total no celular */
+        margin-bottom: 15px;
+    }
+    
+    .google-card {
+        padding: 20px; /* Reduz o padding para a imagem aparecer maior no celular */
+    }
+}
+/* 8. RODAPÉ */
 footer { 
     padding: 60px 20px; 
     background: rgba(0,0,0,0.5); 
@@ -207,12 +302,17 @@ footer a:hover .fa-github {
     transform: scale(1.2);
 }
 
-/* 8. RESPONSIVIDADE (MOBILE) */
+/* 9. RESPONSIVIDADE (MOBILE) */
 @media screen and (max-width: 768px) {
-    /* Navbar Mobile */
+    /* Hero e Navbar */
+    .hero {
+        height: 50vh;
+        background-attachment: scroll;
+    }
+
     .nav-links {
         position: fixed;
-        right: -100%; /* Escondido na direita */
+        right: -100%;
         top: 0;
         height: 100vh;
         width: 70%;
@@ -225,7 +325,7 @@ footer a:hover .fa-github {
     }
 
     .nav-links.active {
-        right: 0; /* Entra na tela */
+        right: 0;
     }
 
     .nav-links li {
@@ -252,9 +352,12 @@ footer a:hover .fa-github {
     .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* Ajustes de conteúdo mobile */
-    .hero { height: 400px; }
+    /* Conteúdo Mobile */
     .card-instrutor { text-align: center; justify-content: center; }
     .instrutor-texto h2 { font-size: 2rem; }
     .titulo-secao { font-size: 2.2rem; }
+
+    .google-badge-img {
+        max-width: 90%;
+    }
 }
