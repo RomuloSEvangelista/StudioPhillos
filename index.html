@@ -30,7 +30,9 @@
             <ul class="nav-links">
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
+                <!-- Novos Links de Vídeos -->
+                <li><a href="videos/fisioterapia.html">Fisioterapia</a></li>
+                <li><a href="videos/pilates.html">Pilates</a></li>
                 <li><a href="#avaliacoes">Avaliações</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -38,7 +40,6 @@
     </nav>
 
     <!-- CAPA PRINCIPAL -->
-    <!-- O ID início deve estar aqui para a navegação voltar ao topo -->
     <header class="hero" id="inicio"></header>
 
     <!-- CHAMADA PARA AÇÃO -->
@@ -65,41 +66,39 @@
             </div>
         </section>
 
-        <!-- SEÇÃO DE DEPOIMENTOS -->
-        <h2 class="titulo-secao" id="depoimentos">Depoimentos</h2>
-        
-        <div class="videos-grid">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTdwDeAj8eZ/" data-instgrm-version="14"></blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DWZC4IBjuqh/" data-instgrm-version="14"></blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DVgRFwhjUY8/" data-instgrm-version="14"></blockquote>
-        </div>
+        <!-- SEÇÃO DE ACESSO AOS VÍDEOS (Substituindo os links soltos) -->
+        <section id="videos-acesso" style="padding: 40px 0; text-align: center;">
+            <h2 class="titulo-secao">Conheça nossos Resultados</h2>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="videos/fisioterapia.html" class="btn-whatsapp" style="background-color: var(--vinho); border: 2px solid var(--marrom);">
+                    <i class="fas fa-hand-holding-medical"></i> Vídeos Fisioterapia
+                </a>
+                <a href="videos/pilates.html" class="btn-whatsapp" style="background-color: var(--marrom); border: 2px solid var(--vinho);">
+                    <i class="fas fa-person-walking-rehab"></i> Vídeos Pilates
+                </a>
+            </div>
+        </section>
 
     </main>
-<!-- SEÇÃO AVALIAÇÕES GOOGLE -->
-<section class="google-reviews" id="avaliacoes">
-    <div class="container">
-        <h2 class="titulo-secao">O que dizem no Google</h2>
-        
-        <div class="google-card">
-            <div class="google-info">
-                <img src="/img/avaliacao.png" alt="Google Logo" width="40">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="nota">5.0 / 5.0</p>
-            </div>
-            <p class="google-text">"Excelente atendimento e profissionais altamente qualificados!"</p>
+
+    <!-- SEÇÃO AVALIAÇÕES GOOGLE -->
+    <section class="google-reviews" id="avaliacoes">
+        <div class="container">
+            <h2 class="titulo-secao">O que dizem no Google</h2>
             
-            <a href="https://www.google.com/search?q=studio+philos+pilates+contempor%C3%A2neo+avalia%C3%A7%C3%B5es" target="_blank" class="btn-google">
-                Ver todas as avaliações
-            </a>
+            <div class="google-card">
+                <!-- Imagem corrigida e ampliada conforme solicitado anteriormente -->
+                <img src="img/avaliacao.png" alt="Avaliações Studio Phiillos" class="google-badge-img" style="max-width: 500px; width: 100%; margin-bottom: 20px;">
+                
+                <p class="google-text">"Excelente atendimento e profissionais altamente qualificados!"</p>
+                
+                <a href="https://www.google.com/search?q=studio+philos+pilates+contempor%C3%A2neo+avalia%C3%A7%C3%B5es" target="_blank" class="btn-google">
+                    Ver todas as avaliações
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <!-- RODAPÉ -->
     <footer id="contato">
         <p style="font-size: 1.8rem; margin-bottom: 5px;"><strong>Studio Phillos Pilates Contemporaneo LTDA</strong></p>
@@ -125,7 +124,6 @@
         </p>
     </footer>
 
-    <script async src="//www.instagram.com/embed.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

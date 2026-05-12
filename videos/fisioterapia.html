@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisioterapia | Studio Phiillos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Studio Phiillos</a>
+
+            <!-- ✅ Menu hamburger adicionado -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="../index.html#inicio">Início</a></li>
+                <li><a href="../index.html#sobre">Sobre</a></li>
+                <li><a href="../index.html#contato">Contato</a></li>
+                <li><a href="../index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="titulo-secao">Fisioterapia</h1>
+        <p style="margin-bottom: 40px; opacity: 0.9;">Confira a evolução e os resultados de nossos alunos.</p>
+        
+        <div class="videos-grid">
+            <div class="video-card">
+                <video controls preload="metadata">
+                    <source src="../arqvideos/fisio1.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <div class="video-info">
+                    <p><i class="fas fa-play-circle"></i> Evolução 01</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <video controls preload="metadata">
+                    <source src="../arqvideos/fisio2.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <!-- ✅ corrigido -->
+                    <p><i class="fas fa-play-circle"></i> Evolução 02</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <video controls preload="metadata">
+                    <source src="../arqvideos/fisio3.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <!-- ✅ corrigido -->
+                    <p><i class="fas fa-play-circle"></i> Evolução 03</p>
+                </div>
+            </div>
+
+            
+          
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Studio Phiillos - Todos os direitos reservados.</p>
+        </p>
+
+        <hr style="opacity: 0.2; margin: 30px 0 20px 0;">
+        <p style="font-size: 0.85rem; opacity: 0.7;">
+            Desenvolvido por <strong>Romulo Evangelista</strong> 
+            <a href="https://github.com/RomuloSEvangelista" target="_blank" style="color: white; margin-left: 8px; font-size: 1.2rem; vertical-align: middle;">
+                <i class="fab fa-github"></i>
+            </a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

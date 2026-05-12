@@ -214,7 +214,7 @@ body {
 
 .google-badge-img {
     width: 100%;
-    max-width: 650px;  /* Aumentei significativamente o tamanho da imagem */
+    max-width: 680px; 
     height: auto;
     margin: 0 auto 30px auto;
     display: block;
@@ -360,4 +360,53 @@ footer a:hover .fa-github {
     .google-badge-img {
         max-width: 90%;
     }
+}
+
+/* Ajuste para os cards de vídeo locais */
+.video-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--marrom);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.video-card video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 9 / 16; /* Formato vertical (Reels) */
+    object-fit: cover;
+    background: #000;
+}
+
+.video-info {
+    padding: 15px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.video-info p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--branco);
+    margin: 0;
+}
+
+/* Botão especial de voltar na navbar */
+.btn-voltar {
+    background: var(--marrom);
+    border-radius: 5px;
+    margin-left: 10px !important;
+}
+
+.btn-voltar:hover {
+    background: var(--branco) !important;
+    color: var(--vinho) !important;
 }
